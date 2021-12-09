@@ -196,7 +196,7 @@ def topscore():
         v = c.execute("SELECT * FROM Topscorers GROUP BY IDNumber ORDER by Goals DESC")
         return render_template("topscore.html", message=v)
 
-if __name__"__main__":
+if __name__ == "__main__":
     app.run(debug=True)
 
 

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+<head>
+    <!-- Load jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Load DataTables -->
+    <link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+</head>
+{% block content  %}
+
+<div class="container">
+    <form action="/players_info" method="POST" class="form-group">
+        <div class="form-group">
+            <div>
+                <label class="col-sm-2 col-form-label col-form-label-lg">PLAYERS</label>
+            </div>
+             <select name="team_players" class="form-control form-control-lg">
+             {% for opt in team %}
+
+             <option value="{{opt}}">{{ opt }}</option>
+
+             {% endfor %}
+             </select>
+             <button value="teamplayers" type="submit" class="btn btn-outline-info">Info</button>
+        </div>
+     </form> 
+     <hr>
+     <a class="btn btn-info" href="/" role="button">BACK TO TEAMS</a>
+     <a class="btn btn-success float-right" href="/dbdata" role="button">VIEW SAVE DATA</a> 
+</div>
+{{ info }}
+
+{% endblock  %}

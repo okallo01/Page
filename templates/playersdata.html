@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content  %}
+
+<div class="container">
+    <table class="table table-bordered" id="information">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in info %}
+            <tr>
+                <td><image src={{ r["player_image"] }}></td>
+                <td>{{ r["player_name"] }}</td>
+                <td>{{ r["player_type"] }}</td>
+                <td>{{ r["player_number"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p class="text-success">{{ s }}</p>
+    <hr>
+    <a class="btn btn-info" href="/" role="button">BACK TO TEAMS</a>
+    <a class="btn btn-info float-right" href="/save" role="button">SAVE DATA</a>    
+    <a class="btn btn-success float-right" href="/dbdata" role="button">VIEW SAVE DATA</a> 
+</div>
+
+{% endblock  %}

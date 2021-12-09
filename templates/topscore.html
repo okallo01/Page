@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+<head>
+    
+</head>
+{% block content  %}
+
+<div class="mui-container">
+    <table class="mui-table mui-table--bordered" id="information">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Place</th>
+                <th>Goals</th>
+                <th>Team</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in message %}
+            <tr>
+                <td>{{ r[0] }}</td>
+                <td>{{ r[1] }}</td>
+                <td>{{ r[2] }}</td>
+                <td>{{ r[3] }}</td>
+                <td>{{ r[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <a class="btn btn-info" href="/" role="button">BACK TO TEAMS</a>
+</div>
+<script>
+        $(document).ready(function () {
+            $("#information").DataTable();
+        });
+    </script>
+
+{% endblock  %}

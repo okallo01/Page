@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+<head>
+    
+</head>
+{% block content  %}
+
+<div class="mui-container">
+    <table class="mui-table mui-table--bordered" id="information">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Number</th>
+                <th>Place</th>
+                <th>Goals</th>
+                <th>Team</th>
+                <th>Matches</th>
+                <th>Injuries</th>
+                <th>Minutes</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in x %}
+            <tr>
+                <td>{{ r[0] }}</td>
+                <td>{{ r[1] }}</td>
+                <td>{{ r[2] }}</td>
+                <td>{{ r[3] }}</td>
+                <td>{{ r[4] }}</td>
+                <td>{{ r[5] }}</td>
+                <td>{{ r[6] }}</td>
+                <td>{{ r[7] }}</td>
+                <td>{{ r[8] }}</td>
+                <td>{{ r[9] }}</td>
+                <td>{{ r[10] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {{ del_message }}
+    <hr>
+    <a class="btn btn-info" href="/" role="button">BACK TO TEAMS</a>
+    <a class="btn btn-danger float-right" href="/delete" role="button">DELETE ALL</a> 
+</div>
+<script>
+        $(document).ready(function () {
+            $("#information").DataTable();
+        });
+    </script>
+
+{% endblock  %}
+

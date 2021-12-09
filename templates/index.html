@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content  %}
+<div class="container">
+    <h1 class="p-3 mb-2 bg-info text-white">GET TO KNOW YOUR PLAYERS!!</h1>
+</div>
+
+
+<div class="container">
+       <form action="/team" method="POST" class="form-group">
+           <div class="form-group">
+               <div>
+                   <label class="col-sm-2 col-form-label col-form-label-lg">TEAMS</label>
+               </div>
+                <select name="team_names" class="form-control form-control-lg">
+                {% for opt in options %}
+
+                <option value="{{opt}}">{{ opt }}</option>
+
+                {% endfor %}
+                </select>
+                <button value="teamname" type="submit" class="btn btn-outline-info">GET FULL SQUAD</button>
+           </div>
+        </form> 
+        <hr>
+        <a class="btn btn-success float-right" href="/dbdata" role="button">VIEW SAVE DATA</a> 
+        <a class="btn btn-warning float-right" href="/topscorers" role="button">LEAGUE TOP SCORERES</a> 
+</div>
+
+
+
+
+
+
+{% endblock  %}
